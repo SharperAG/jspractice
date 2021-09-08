@@ -14,15 +14,32 @@ console.log(country.toLowerCase());
 console.log(values.sort()); */
 
 
-let someval = "19px";
+/* let someval = "19.493px";
 
-console.log(parseInt(someval));
+let float = 14.3;
+
+console.log(parseFloat(someval));
+
+console.log(Math.cos(float)); */
 
 
 
 
-/* 
-let numberOfFilms = prompt ("Сколько фильмов вы уже посмотрели?");
+
+
+let numberOfFilms;
+
+
+function start() {
+    numberOfFilms = +prompt ("Сколько фильмов вы уже посмотрели?");
+
+    while (isNaN(numberOfFilms) || numberOfFilms == "" || numberOfFilms == null){
+         numberOfFilms = +prompt ("Сколько фильмов вы уже посмотрели?");
+    }
+}
+
+start();
+
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -32,7 +49,9 @@ const personalMovieDB = {
     privat: false
 };
 
-let i =0; 
+
+
+let i =0 ; 
 
 function askMovie() {
     do{
@@ -69,20 +88,25 @@ amountMovie(moviesAmount);
 
 askMovie();
 
-const square = function(a,b) {
-    return (a + b) * 2;
+function writeYourGenres() {
+    
+    for ( let i = 1; i <= 3; i++){
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i} ?`);
+    }
+}
+
+writeYourGenres();
+
+const showMyDb = function(hidden){
+
+    if (hidden != true){
+    console.log(personalMovieDB); 
+    }
 };
 
-console.log ( `square equal ${square(5,5)}`);
+showMyDb(personalMovieDB.privat);
 
 
-console.log(personalMovieDB); //main block
-
-const rectDistance = (val1, val2) => (val1*2) + (val2*2);
-;
-
-console.log (`длина прямоугольника равна ${rectDistance(10,15)}`);
- */
 /* if ( 3 != 0) {
     console.log ("thre not equal zero");
 } else {
